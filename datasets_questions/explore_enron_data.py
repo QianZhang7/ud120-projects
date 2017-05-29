@@ -19,4 +19,22 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print len(enron_data)
 
+print len(enron_data[enron_data.keys()[0]])
+
+counter = 0
+for person in enron_data.keys():
+    if enron_data[person]['poi'] == 1:
+        counter = counter + 1
+        
+print counter
+
+import pandas as pd
+poi_names = pd.read_csv("../final_project/poi_names.txt")
+
+print len(poi_names)
+
+print enron_data['PRENTICE JAMES']
+
+print enron_data['COLWELL WESLEY']
